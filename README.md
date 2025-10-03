@@ -12,12 +12,14 @@ Spring MVC + Oracle DB 기반으로 제작되었으며, 자유게시판·패치�
 ### 🎨 Front-End
 - HTML5 / CSS3 / JavaScript (ES6)  
 - jQuery / AJAX  
-- Chart.js (통계 시각화)  
+- Chart.js (통계 시각화)
+- Toast UI Editor — 자유·빌드 게시판 적용
 
 ### ⚙️ Back-End
 - Java 11  
-- Spring MVC / JSP  
-- MyBatis / Lombok  
+- Spring MVC / JSP
+- RESTful API 설계
+- MyBatis / Lombok
 
 ### 🗄 Database
 - Oracle 11g  
@@ -27,10 +29,11 @@ Spring MVC + Oracle DB 기반으로 제작되었으며, 자유게시판·패치�
 - Apache Tomcat 9  
 - AWS (배포 환경)  
 - Maven (빌드 도구)  
-- STS 3 (Spring Tool Suite IDE)  
+- STS 3 (Spring Tool Suite IDE)
+- WebSocket (실시간 채팅)  
 
 ### 🔗 External Services & Security
-- Riot Games API (소환사 정보, 랭킹, 챔피언 상세 데이터)  
+- Riot Developer API (소환사 정보, 랭킹, 챔피언 상세 데이터)  
 - Google OAuth 2.0 (소셜 로그인)  
 - Kakao Login API (소셜 로그인)  
 - JavaMailSender (SMTP) — 비밀번호 재설정 메일  
@@ -73,19 +76,30 @@ Spring MVC + Oracle DB 기반으로 제작되었으며, 자유게시판·패치�
 
 ---
 
-### **성현철**
-- **소환사 상세 페이지**
-  - Riot API 기반 최근 전적(100경기) 데이터 수집·DB 저장  
-  - 소환사 프로필, 대표 챔피언, 아이템·룬·스펠·스킬 빌드 시각화  
-  - 전적 세부 통계(totalDetailDto) 가공 및 출력  
-- **빌드 게시판**
-  - 챔피언/아이템/룬/스펠 기반 빌드 공유 기능  
-  - 게시글 CRUD, 추천, 댓글 기능 구현  
-  - AJAX 기반 이미지 검색(챔피언, 아이템, 룬, 스펠)으로 빌드 작성 지원  
-- **웹소켓(WebSocket)**
-  - 실시간 알림/채팅 기능을 고려한 WebSocket 환경 구축  
+### 👥 팀원 및 역할 — **성현철**
 
----
+### 소환사 상세정보(AJAX)
+- Riot Developer API를 활용한 전적 실시간 데이터 수집 자동화 구현 (RESTful API 설계)
+- 수집된 데이터를 아이템 빌드, 스킬 빌드, 룬 빌드, 파편 빌드, 소환사 및 챔피언 상세정보 등으로 변환 자동화 구현
+- DTO 설계 및 데이터베이스에서 모델로의 데이터 전달 성능 개선(DB 튜닝)
+- SQL 작성, Service 로직 및 DAO 구현
+- chart.js로 데이터 시각화
+
+### 빌드게시판 구현(AJAX)
+- Toast UI Editor 에서 내 이미지와 기능을 게시글에 적용할 수 있도록 설계(챔피언, 아이템, 룬 선택 박스를 제공)
+
+### 실시간 채팅
+- 프로젝트 내 모든 페이지에 WebSocket 기반 실시간 채팅 기능 구현
+
+### 기술적 문제 해결 및 최적화
+- 데이터 파싱 중 발생한 커넥션 풀 문제를 HikariCP로 해결하여 시스템 안정성 확보
+
+### 성장점
+- DB튜닝으로 성능 최적화 경험 (20만개 이상의 레코드)
+- 협업 및 커뮤니케이션 능력 향상 (Git)
+- API 활용능력 향상 (다수의 API 사용)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### **나상우**
 - **패치 게시판**
